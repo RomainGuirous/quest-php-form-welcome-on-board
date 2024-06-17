@@ -16,11 +16,24 @@ body {
     flex-direction: column;
 }
 
+main {
+    padding-top: 10%;
+}
+
 h1, h2, h3 {
     font-family: "Montserrat", Verdana, Geneva, Tahoma, sans-serif;
 }
 
-h2 {
+h1 {
+    font-size: 3rem;
+}
+
+h3 {
+    color: var(--primary-color);
+    padding-left: 20%;
+}
+
+h1,h2 {
     color: var(--primary-color);
     text-align: center;
 }

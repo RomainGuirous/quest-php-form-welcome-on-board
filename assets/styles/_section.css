@@ -4,7 +4,52 @@ section.container {
     margin-bottom: var(--spacing-3);
 }
 
-section p {
+section p,ul,li {
     max-width: 60ch;
     margin-inline: auto;
+}
+
+label,
+input,
+select {
+    display: flex;
+    flex-direction: column;
+    height: 35px;
+}
+
+label {
+    font-size: larger;
+}
+
+input,
+textarea,
+select {
+    background-color: var(--grey);
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+
+}
+
+option {
+    background-color: white;
+}
+
+section form {
+    max-width: 60ch;
+    margin-inline: auto;
+}
+
+.red {
+    color: red;
+}
+
+.button {
+    border-radius: 15px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border: none;
 }

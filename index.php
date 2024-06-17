@@ -20,6 +20,7 @@
         </div>
     </header>
     <main>
+
         <section class="container">
             <h2 id="articles">Recent articles</h2>
             <div class="articles">
@@ -55,7 +56,67 @@
                 quaerat nemo nam, consequuntur nisi alias in praesentium. Fuga amet esse nam doloremque ut nemo nostrum.
             </p>
         </section>
-        <?php //@todo Add a contact form  ?>
+        <section class="container">
+
+            <h2>Get in touch</h2>
+
+            <?php if (empty($errors)) : ?>
+
+                <p>Leave us a message and we will get back to you as soon as possible.</p>
+                <p>Fields marked with red wildcards* are required.</p>
+
+            <?php else : ?>
+
+                <h3>Please fix errors below</h3>
+                <ul>
+                    <?php foreach ($errors as $error) : ?>
+                        <li>
+                            <?= $error ?>
+                        </li>
+                    <?php endforeach ?>
+                </ul>
+
+            <?php endif ?>
+
+            <form action="result.php" method="post">
+
+                <div>
+                    <label for="name"><b>Name <span class="red">*</span></b></label>
+                    <input type="text" id="name" name="name" required="True">
+                </div>
+
+                <div>
+                    <label for="email"><b>Email <span class="red">*</span></b></label>
+                    <input type="email" id="email" name="email" required="True">
+                </div>
+
+                <div>
+                    <label for="subject"><b>Subject <span class="red">*</span></b></label>
+                    <select name="subject" id="subject" required="True">
+                        <option value=""></option>
+                        <option value="rdv">Prendre rendez-vous</option>
+                        <option value="newsletter">Inscription à la newsletter</option>
+                        <option value="reclamation">Réclamation</option>
+                        <option value="devis">Demander un devis</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="message"><b>Message</b></label>
+                    <textarea name="message" id="message" rows="10"></textarea>
+                </div>
+
+                <div>
+                    <button class="button">SEND</button>
+                </div>
+
+            </form>
+
+
+
+        </section>
+        <?php //@todo Add a contact form  
+        ?>
     </main>
     <?php include '_footer.php' ?>
 </body>
